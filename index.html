@@ -3,121 +3,566 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Karan — Embedded Systems & Robotics</title>
-  <meta name="description" content="Karan — Embedded Systems student. Projects: Camouflage Technique based Multifunctional Army Robot. Contact: karankamla29697@gmail.com" />
+  <title>Karan Jeevan — Embedded Systems & Robotics</title>
+  <meta name="description" content="Portfolio of Karan Jeevan, ECE student focused on Embedded Systems, IoT, and Robotics." />
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#07070a; --card:#0f1114; --muted:#9aa3ad; --accent:#00b4ff; --glass: rgba(255,255,255,0.04);
-      --radius:14px; --maxw:980px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --bg:#05070b;
+      --bg-alt:#0b0f18;
+      --card:#0f1420;
+      --accent:#00b4ff;
+      --accent-soft:rgba(0,180,255,0.13);
+      --text:#f5f7ff;
+      --muted:#a4b0c3;
+      --border:rgba(255,255,255,0.06);
+      --radius-xl:22px;
+      --radius:14px;
+      --shadow:0 18px 55px rgba(0,0,0,0.7);
+      --maxw:1080px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#05060a 0%, #0a0b0f 100%);color:#e6eef6}
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      height:100%;
+      background:radial-gradient(circle at top left,#0b2340 0,#05070b 42%,#020309 100%);
+      color:var(--text);
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      scroll-behavior:smooth;
+    }
     a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(0,0,0,0.6)}
-    header{display:flex;gap:18px;align-items:center}
-    .logo{width:84px;height:84px;border-radius:14px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%, rgba(0,180,255,0.12), transparent 25%), linear-gradient(180deg, rgba(0,180,255,0.06), rgba(0,0,0,0.03));border:1px solid rgba(0,180,255,0.12)}
-    .logo svg{width:56px;height:56px}
-    h1{font-size:28px;margin:0 0 6px}
-    .subtitle{color:var(--muted);margin:0 0 12px}
-    .top-right{margin-left:auto;text-align:right}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(180deg, rgba(0,180,255,0.08), rgba(255,255,255,0.01));border:1px solid rgba(0,180,255,0.12);cursor:pointer}
+    body{padding:24px}
 
-    main{display:grid;grid-template-columns:1fr;gap:22px;margin-top:22px}
-    @media(min-width:880px){main{grid-template-columns:1fr 360px}}
+    .shell{
+      max-width:var(--maxw);
+      margin:0 auto;
+      background:linear-gradient(145deg,rgba(255,255,255,0.03),rgba(0,0,0,0.7));
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:var(--shadow);
+      padding:26px 26px 32px;
+      backdrop-filter:blur(26px);
+    }
 
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    h2{margin:0 0 10px;font-size:16px}
-    p{color:#cfe6ff;margin:0 0 12px;line-height:1.5}
-    ul{margin:0 0 12px;padding-left:18px;color:var(--muted)}
-    li{margin:6px 0}
+    /* NAV */
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom:22px;
+    }
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
 
-    .project-title{font-weight:700;color:#fff}
-    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(0,180,255,0.08);color:var(--accent);font-weight:600;margin-bottom:10px}
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:20px;
+      background:
+        radial-gradient(circle at 30% 10%,rgba(0,180,255,.4),transparent 55%),
+        radial-gradient(circle at 80% 90%,rgba(0,180,255,.25),transparent 55%),
+        linear-gradient(145deg,#041423,#05070b);
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(0,180,255,0.55);
+      box-shadow:0 0 30px rgba(0,180,255,0.35);
+    }
+    .logo span{
+      font-size:30px;
+      font-weight:700;
+    }
 
-    .contact a{display:inline-block;margin-right:8px;padding:8px 10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .nav-name{
+      display:flex;
+      flex-direction:column;
+    }
+    .nav-name h1{font-size:24px;line-height:1.1}
+    .nav-name small{color:var(--muted);font-size:13px}
 
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    .nav-right{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-    .logo{transition:transform .35s ease, box-shadow .35s ease}
-    .logo:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(0,180,255,0.08)}
+    .pill{
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid var(--accent-soft);
+      background:rgba(5,12,24,0.9);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
 
-    .cta{display:inline-flex;gap:10px;align-items:center}
-    .view-project{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent), #3ec6ff);color:#02101a;font-weight:700;border:none;cursor:pointer}
+    .btn{
+      border-radius:999px;
+      padding:8px 14px;
+      border:1px solid var(--accent-soft);
+      background:linear-gradient(135deg,var(--accent-soft),rgba(255,255,255,0.04));
+      font-size:13px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,#00b4ff,#2bdfc5);
+      color:#021018;
+      border:none;
+      font-weight:600;
+      box-shadow:0 10px 30px rgba(0,180,255,0.4);
+    }
+
+    /* LAYOUT */
+    .grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:20px;
+    }
+    @media(max-width:900px){
+      body{padding:14px}
+      .shell{padding:18px 16px 22px;border-radius:18px}
+      .grid{grid-template-columns:1fr}
+      .nav{flex-direction:column;align-items:flex-start;gap:12px}
+      .nav-right{margin-left:0}
+    }
+
+    .card{
+      background:var(--bg-alt);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:16px 18px 18px;
+      box-shadow:0 10px 28px rgba(0,0,0,0.55);
+    }
+
+    h2{
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .hero-title{
+      font-size:23px;
+      margin-bottom:10px;
+    }
+    .hero-highlight{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .hero-highlight strong{color:var(--text)}
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+    .chip{
+      font-size:11px;
+      padding:5px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(11,18,32,0.95);
+      color:var(--muted);
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+    }
+
+    .chip i{font-size:12px}
+
+    /* SKILLS */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .skills-col h3{
+      font-size:13px;
+      margin-bottom:6px;
+      color:var(--text);
+    }
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .tag{
+      font-size:11px;
+      padding:4px 7px;
+      border-radius:999px;
+      background:rgba(21,28,44,0.95);
+      border:1px solid rgba(255,255,255,0.05);
+      color:var(--muted);
+    }
+
+    /* PROJECTS */
+    .project{
+      padding:10px 0;
+      border-bottom:1px dashed rgba(255,255,255,0.08);
+    }
+    .project:last-child{border-bottom:none}
+    .project-title{
+      font-size:14px;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .project-title span{
+      font-size:10px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .project p{
+      margin-top:6px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .project-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:7px;
+    }
+
+    /* EDUCATION & ACHIEVEMENTS */
+    .timeline{
+      border-left:1px solid rgba(255,255,255,0.12);
+      margin-top:8px;
+      padding-left:14px;
+    }
+    .timeline-item{
+      margin-bottom:10px;
+      position:relative;
+    }
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-8px;
+      top:4px;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 12px rgba(0,180,255,0.9);
+    }
+    .timeline-title{
+      font-size:13px;
+      font-weight:600;
+    }
+    .timeline-meta{
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    .list{
+      margin-top:8px;
+      font-size:13px;
+      color:var(--muted);
+      list-style:disc;
+      padding-left:20px;
+    }
+
+    /* CONTACT CARD */
+    .contact-line{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:7px;
+    }
+    .contact-line i{
+      width:18px;
+      text-align:center;
+    }
+    .contact-actions{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    footer{
+      margin-top:18px;
+      font-size:11px;
+      color:var(--muted);
+      text-align:center;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-
-      <div class="logo" aria-hidden>
-        <svg viewBox="0 0 100 100">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#00b4ff" />
-              <stop offset="1" stop-color="#0077d9" />
-            </linearGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="4" result="b" />
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <circle cx="50" cy="50" r="46" fill="none" stroke="url(#g)" stroke-width="2.5" opacity="0.06"/>
-          <g filter="url(#glow)">
-            <text x="50%" y="55%" font-family="Inter" font-weight="700" font-size="48" text-anchor="middle" fill="url(#g)">K</text>
-          </g>
-        </svg>
-      </div>
-
-      <div>
-        <h1>Karan</h1>
-        <div class="subtitle">Embedded Systems • Robotics Enthusiast</div>
-        <div style="color:var(--muted);font-size:13px">Camouflage Technique — Based Multifunctional Army Robot</div>
-      </div>
-
-      <div class="top-right">
-        <div class="kicker">ECE Student</div>
-        <div style="margin-top:8px" class="cta">
-          <a class="btn" href="#contact">Contact</a>
-          <a class="btn" href="#project">View Project</a>
+  <div class="shell">
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo" aria-hidden="true">
+          <span>K</span>
         </div>
+        <div class="nav-name">
+          <h1>Karan Jeevan</h1>
+          <small>Embedded Systems & Robotics • ECE, Bengaluru</small>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="pill">
+          <i class="fa-solid fa-microchip"></i>&nbsp; Final-year ECE
+        </div>
+        <a href="#contact" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Hire me for internship
+        </a>
       </div>
     </header>
 
-    <main>
+    <!-- MAIN GRID -->
+    <main class="grid">
+      <!-- LEFT SIDE -->
       <section>
-        <div class="card">
-          <h2>About me</h2>
-          <p>Hi — I'm <strong>Karan</strong>, an Embedded Systems student passionate about robotics and hardware design. I work with microcontrollers, sensors, and real-world integration.</p>
+        <!-- HERO / ABOUT -->
+        <article class="card">
+          <h2>About</h2>
+          <div class="hero-title">
+            Building real-world hardware with <span style="color:var(--accent);">embedded intelligence.</span>
+          </div>
+          <p class="hero-highlight">
+            I’m a final-year <strong>Electronics & Communication Engineering</strong> student specializing in
+            <strong>Embedded Systems, IoT, Robotics, and sensor-based automation</strong>.
+            I enjoy converting ideas into working prototypes using microcontrollers, communication modules,
+            and circuit design.
+          </p>
 
-          <h2>Skills</h2>
-          <ul>
-            <li>Embedded C / Microcontrollers (STM32, AVR, ESP)</li>
-            <li>Robotics — sensors, actuators, control</li>
-            <li>PCB prototyping & soldering</li>
-            <li>IoT basics & RTOS concepts</li>
-            <li>Git & debugging tools</li>
+          <div class="chips">
+            <div class="chip"><i class="fa-solid fa-microchip"></i> Embedded Systems</div>
+            <div class="chip"><i class="fa-solid fa-robot"></i> Robotics</div>
+            <div class="chip"><i class="fa-solid fa-tower-broadcast"></i> IoT / Wireless</div>
+            <div class="chip"><i class="fa-solid fa-code"></i> C, Embedded C, Python</div>
+          </div>
+        </article>
+
+        <!-- PROJECTS -->
+        <article class="card" style="margin-top:14px;">
+          <h2>Highlighted projects</h2>
+
+          <div class="project">
+            <div class="project-title">
+              <i class="fa-solid fa-user-ninja"></i>
+              Camouflage Technique Based Multifunctional Army Robot
+              <span>Defense</span>
+            </div>
+            <p>
+              Designed a multifunctional defense robot for remote surveillance with
+              <strong>adaptive camouflage</strong>, obstacle detection and wireless control.
+              Implemented autonomous navigation features using Arduino and embedded C.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Arduino</span>
+              <span class="tag">Embedded C</span>
+              <span class="tag">Ultrasonic sensors</span>
+              <span class="tag">RF modules</span>
+              <span class="tag">Motor drivers</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-title">
+              <i class="fa-solid fa-seedling"></i>
+              IoT-Based Smart Plant Watering System
+              <span>IoT</span>
+            </div>
+            <p>
+              Built an automatic irrigation system that intelligently waters plants based on real-time
+              soil moisture and climate data. Enabled cloud monitoring and remote control over Wi-Fi.
+            </p>
+            <div class="project-tags">
+              <span class="tag">ESP8266</span>
+              <span class="tag">DHT &amp; moisture sensors</span>
+              <span class="tag">IoT dashboard</span>
+              <span class="tag">Automation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- EDUCATION & ACHIEVEMENTS -->
+        <article class="card" style="margin-top:14px;">
+          <h2>Education & Achievements</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-title">
+                B.E. in Electronics and Communication Engineering
+              </div>
+              <div class="timeline-meta">
+                Dr. Shivkumar Institute of Technology Engineering, Bengaluru — Expected 2026
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-title">
+                Pre-University College (PUC) — 65%
+              </div>
+              <div class="timeline-meta">
+                Sankalp College, Karnataka (2020–2022)
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-title">
+                SSLC — 67.04%
+              </div>
+              <div class="timeline-meta">
+                Sai Vidya Mandir High School, Karnataka (2020)
+              </div>
+            </div>
+          </div>
+
+          <ul class="list">
+            <li>IEEE certificate of participation for presenting the camouflage army robot project.</li>
+            <li>Presented project at <strong>IEEE Technical Symposium 2024</strong>.</li>
+            <li>Certificate of Merit in <strong>Electronics Circuit Design Contest (2023)</strong>.</li>
+            <li>Participated in <strong>IoT Innovation Workshop</strong>, DSSIT (2023).</li>
           </ul>
-
-          <h2 id="project">Project</h2>
-          <div class="project-title">Camouflage Technique — Based Multifunctional Army Robot</div>
-          <p><strong>Description:</strong> A multifunctional robotic platform with adaptive camouflage, modular sensors and strong mobility.</p>
-
-          <h2>Certifications</h2>
-          <p>ICAT Exam — Cleared</p>
-        </div>
+        </article>
       </section>
 
+      <!-- RIGHT SIDE -->
       <aside>
-        <div class="card" id="contact">
+        <!-- SKILLS -->
+        <section class="card">
+          <h2>Technical Skills</h2>
+
+          <div class="skills-grid">
+            <div class="skills-col">
+              <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Platforms</h3>
+              <div class="tag-row">
+                <span class="tag">Proteus</span>
+                <span class="tag">Multisim</span>
+                <span class="tag">MATLAB</span>
+                <span class="tag">Arduino IDE</span>
+                <span class="tag">ESP32 / ESP8266</span>
+                <span class="tag">Basic PCB design</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+
+            <div class="skills-col">
+              <h3><i class="fa-solid fa-code"></i> Programming</h3>
+              <div class="tag-row">
+                <span class="tag">C</span>
+                <span class="tag">Embedded C</span>
+                <span class="tag">Python</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <h3 style="margin-top:10px;"><i class="fa-solid fa-bolt"></i> Core Areas</h3>
+              <div class="tag-row">
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Sensors &amp; Actuators</span>
+                <span class="tag">Digital &amp; Analog Electronics</span>
+                <span class="tag">Communication Systems</span>
+                <span class="tag">Circuit Simulation</span>
+                <span class="tag">Basic VLSI Design</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STRENGTHS -->
+        <section class="card" style="margin-top:14px;">
+          <h2>Profile snapshot</h2>
+          <ul class="list" style="margin-top:4px;">
+            <li>Interested in Embedded Systems, IoT, Robotics, VLSI & Signal Processing.</li>
+            <li>Strong in problem-solving, teamwork and adaptability.</li>
+            <li>Comfortable taking a project from idea → circuit → code → prototype.</li>
+          </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="card" style="margin-top:14px;">
           <h2>Contact</h2>
-          <p>Email: <a href="mailto:karankamla29697@gmail.com">karankamla29697@gmail.com</a></p>
-          <p style="color:var(--muted);font-size:13px">Add this portfolio link to your Instagram / LinkedIn bio.</p>
-        </div>
+          <div class="contact-line">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Bengaluru, Karnataka</span>
+          </div>
+          <div class="contact-line">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 79750 1262</span>
+          </div>
+          <div class="contact-line">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:karankamla29697@gmail.com">karankamla29697@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/karan-jeevan-165525386" target="_blank">
+              linkedin.com/in/karan-jeevan-165525386
+            </a>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:karankamla29697@gmail.com">
+              <i class="fa-solid fa-envelope-open-text"></i> Email Karan
+            </a>
+            <button class="btn" type="button" onclick="copyLink()">
+              <i class="fa-solid fa-link"></i> Copy portfolio link
+            </button>
+          </div>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+            Add this page link to your Instagram / LinkedIn bio so recruiters can quickly view your work.
+          </p>
+        </section>
       </aside>
     </main>
 
-    <footer>Built by Karan — Dark Theme Portfolio</footer>
+    <footer>
+      © <span id="year"></span> Karan Jeevan — Designed in a dark theme for embedded & robotics roles.
+    </footer>
   </div>
+
+  <script>
+    // dynamic year + copy link helper
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function copyLink() {
+      const url = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          alert("Portfolio link copied! Paste it into your bio.");
+        }, function () {
+          prompt("Copy this link:", url);
+        });
+      } else {
+        prompt("Copy this link:", url);
+      }
+    }
+  </script>
 </body>
 </html>
