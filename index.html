@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Karan — Embedded Systems & Robotics</title>
+  <meta name="description" content="Karan — Embedded Systems student. Projects: Camouflage Technique based Multifunctional Army Robot. Contact: karankamla29697@gmail.com" />
+  <style>
+    :root{
+      --bg:#07070a; --card:#0f1114; --muted:#9aa3ad; --accent:#00b4ff; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:980px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#05060a 0%, #0a0b0f 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(0,0,0,0.6)}
+    header{display:flex;gap:18px;align-items:center}
+    .logo{width:84px;height:84px;border-radius:14px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%, rgba(0,180,255,0.12), transparent 25%), linear-gradient(180deg, rgba(0,180,255,0.06), rgba(0,0,0,0.03));border:1px solid rgba(0,180,255,0.12)}
+    .logo svg{width:56px;height:56px}
+    h1{font-size:28px;margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0 0 12px}
+    .top-right{margin-left:auto;text-align:right}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(180deg, rgba(0,180,255,0.08), rgba(255,255,255,0.01));border:1px solid rgba(0,180,255,0.12);cursor:pointer}
+
+    main{display:grid;grid-template-columns:1fr;gap:22px;margin-top:22px}
+    @media(min-width:880px){main{grid-template-columns:1fr 360px}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    h2{margin:0 0 10px;font-size:16px}
+    p{color:#cfe6ff;margin:0 0 12px;line-height:1.5}
+    ul{margin:0 0 12px;padding-left:18px;color:var(--muted)}
+    li{margin:6px 0}
+
+    .project-title{font-weight:700;color:#fff}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(0,180,255,0.08);color:var(--accent);font-weight:600;margin-bottom:10px}
+
+    .contact a{display:inline-block;margin-right:8px;padding:8px 10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    .logo{transition:transform .35s ease, box-shadow .35s ease}
+    .logo:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(0,180,255,0.08)}
+
+    .cta{display:inline-flex;gap:10px;align-items:center}
+    .view-project{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent), #3ec6ff);color:#02101a;font-weight:700;border:none;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+
+      <div class="logo" aria-hidden>
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#00b4ff" />
+              <stop offset="1" stop-color="#0077d9" />
+            </linearGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="b" />
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="url(#g)" stroke-width="2.5" opacity="0.06"/>
+          <g filter="url(#glow)">
+            <text x="50%" y="55%" font-family="Inter" font-weight="700" font-size="48" text-anchor="middle" fill="url(#g)">K</text>
+          </g>
+        </svg>
+      </div>
+
+      <div>
+        <h1>Karan</h1>
+        <div class="subtitle">Embedded Systems • Robotics Enthusiast</div>
+        <div style="color:var(--muted);font-size:13px">Camouflage Technique — Based Multifunctional Army Robot</div>
+      </div>
+
+      <div class="top-right">
+        <div class="kicker">ECE Student</div>
+        <div style="margin-top:8px" class="cta">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="#project">View Project</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2>About me</h2>
+          <p>Hi — I'm <strong>Karan</strong>, an Embedded Systems student passionate about robotics and hardware design. I work with microcontrollers, sensors, and real-world integration.</p>
+
+          <h2>Skills</h2>
+          <ul>
+            <li>Embedded C / Microcontrollers (STM32, AVR, ESP)</li>
+            <li>Robotics — sensors, actuators, control</li>
+            <li>PCB prototyping & soldering</li>
+            <li>IoT basics & RTOS concepts</li>
+            <li>Git & debugging tools</li>
+          </ul>
+
+          <h2 id="project">Project</h2>
+          <div class="project-title">Camouflage Technique — Based Multifunctional Army Robot</div>
+          <p><strong>Description:</strong> A multifunctional robotic platform with adaptive camouflage, modular sensors and strong mobility.</p>
+
+          <h2>Certifications</h2>
+          <p>ICAT Exam — Cleared</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card" id="contact">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:karankamla29697@gmail.com">karankamla29697@gmail.com</a></p>
+          <p style="color:var(--muted);font-size:13px">Add this portfolio link to your Instagram / LinkedIn bio.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>Built by Karan — Dark Theme Portfolio</footer>
+  </div>
+</body>
+</html>
