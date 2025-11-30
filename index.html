@@ -1,568 +1,917 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Karan Jeevan — Embedded Systems & Robotics</title>
-  <meta name="description" content="Portfolio of Karan Jeevan, ECE student focused on Embedded Systems, IoT, and Robotics." />
+  <meta charset="UTF-8" />
+  <title>Karan Jeevan | Electronics & Communication Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Karan Jeevan, Electronics and Communication Engineering student specializing in embedded systems, IoT, and robotics."
+  />
 
   <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-4oVYJ3E9kXjK9hTAs9XvB5Nf0mWZGS8IYF2dGZxj5uXjJ0bGk1pK3p9YV+J8SE4wAU1sR8kDW5tW4w2YxM8Ykg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
   <style>
-    :root{
-      --bg:#05070b;
-      --bg-alt:#0b0f18;
-      --card:#0f1420;
-      --accent:#00b4ff;
-      --accent-soft:rgba(0,180,255,0.13);
-      --text:#f5f7ff;
-      --muted:#a4b0c3;
-      --border:rgba(255,255,255,0.06);
-      --radius-xl:22px;
-      --radius:14px;
-      --shadow:0 18px 55px rgba(0,0,0,0.7);
-      --maxw:1080px;
+    :root {
+      --bg: #020617;
+      --bg-soft: #050816;
+      --card: rgba(15, 23, 42, 0.8);
+      --accent: #7c3aed;
+      --accent2: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.35);
+      --radius-lg: 20px;
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.9);
+      --transition: 200ms ease;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{
-      height:100%;
-      background:radial-gradient(circle at top left,#0b2340 0,#05070b 42%,#020309 100%);
-      color:var(--text);
-      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      scroll-behavior:smooth;
-    }
-    a{color:var(--accent);text-decoration:none}
-    body{padding:24px}
-
-    .shell{
-      max-width:var(--maxw);
-      margin:0 auto;
-      background:linear-gradient(145deg,rgba(255,255,255,0.03),rgba(0,0,0,0.7));
-      border-radius:var(--radius-xl);
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:var(--shadow);
-      padding:26px 26px 32px;
-      backdrop-filter:blur(26px);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* NAV */
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      margin-bottom:22px;
-    }
-    .nav-left{
-      display:flex;
-      align-items:center;
-      gap:14px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .logo{
-      width:64px;
-      height:64px;
-      border-radius:20px;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
       background:
-        radial-gradient(circle at 30% 10%,rgba(0,180,255,.4),transparent 55%),
-        radial-gradient(circle at 80% 90%,rgba(0,180,255,.25),transparent 55%),
-        linear-gradient(145deg,#041423,#05070b);
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(0,180,255,0.55);
-      box-shadow:0 0 30px rgba(0,180,255,0.35);
-    }
-    .logo span{
-      font-size:30px;
-      font-weight:700;
+        radial-gradient(circle at top, #111827 0, #020617 43%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .nav-name{
-      display:flex;
-      flex-direction:column;
-    }
-    .nav-name h1{font-size:24px;line-height:1.1}
-    .nav-name small{color:var(--muted);font-size:13px}
-
-    .nav-right{
-      margin-left:auto;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .pill{
-      padding:6px 12px;
-      border-radius:999px;
-      border:1px solid var(--accent-soft);
-      background:rgba(5,12,24,0.9);
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--muted);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .btn{
-      border-radius:999px;
-      padding:8px 14px;
-      border:1px solid var(--accent-soft);
-      background:linear-gradient(135deg,var(--accent-soft),rgba(255,255,255,0.04));
-      font-size:13px;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      cursor:pointer;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#00b4ff,#2bdfc5);
-      color:#021018;
-      border:none;
-      font-weight:600;
-      box-shadow:0 10px 30px rgba(0,180,255,0.4);
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* LAYOUT */
-    .grid{
-      display:grid;
-      grid-template-columns:1.4fr 1fr;
-      gap:20px;
-    }
-    @media(max-width:900px){
-      body{padding:14px}
-      .shell{padding:18px 16px 22px;border-radius:18px}
-      .grid{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start;gap:12px}
-      .nav-right{margin-left:0}
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
     }
 
-    .card{
-      background:var(--bg-alt);
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      padding:16px 18px 18px;
-      box-shadow:0 10px 28px rgba(0,0,0,0.55);
+    /* Glass */
+    .glass-card {
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.85),
+        rgba(15, 23, 42, 0.5)
+      );
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(22px);
     }
 
-    h2{
-      font-size:15px;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:var(--muted);
-      margin-bottom:10px;
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.96),
+        rgba(2, 6, 23, 0.75),
+        transparent
+      );
+      border-bottom: 1px solid rgba(55, 65, 81, 0.5);
     }
 
-    .hero-title{
-      font-size:23px;
-      margin-bottom:10px;
-    }
-    .hero-highlight{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.7;
-    }
-    .hero-highlight strong{color:var(--text)}
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:14px;
-    }
-    .chip{
-      font-size:11px;
-      padding:5px 9px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(11,18,32,0.95);
-      color:var(--muted);
-      display:inline-flex;
-      gap:6px;
-      align-items:center;
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
     }
 
-    .chip i{font-size:12px}
-
-    /* SKILLS */
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:10px;
-      margin-top:10px;
-    }
-    .skills-col h3{
-      font-size:13px;
-      margin-bottom:6px;
-      color:var(--text);
-    }
-    .tag-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-    }
-    .tag{
-      font-size:11px;
-      padding:4px 7px;
-      border-radius:999px;
-      background:rgba(21,28,44,0.95);
-      border:1px solid rgba(255,255,255,0.05);
-      color:var(--muted);
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
     }
 
-    /* PROJECTS */
-    .project{
-      padding:10px 0;
-      border-bottom:1px dashed rgba(255,255,255,0.08);
-    }
-    .project:last-child{border-bottom:none}
-    .project-title{
-      font-size:14px;
-      font-weight:600;
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    .project-title span{
-      font-size:10px;
-      padding:2px 7px;
-      border-radius:999px;
-      background:var(--accent-soft);
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    .project p{
-      margin-top:6px;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-    .project-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-top:7px;
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 160deg,
+        #22d3ee,
+        #6366f1,
+        #ec4899,
+        #22d3ee
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #f9fafb;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.9),
+        0 14px 30px rgba(0, 0, 0, 0.9);
     }
 
-    /* EDUCATION & ACHIEVEMENTS */
-    .timeline{
-      border-left:1px solid rgba(255,255,255,0.12);
-      margin-top:8px;
-      padding-left:14px;
-    }
-    .timeline-item{
-      margin-bottom:10px;
-      position:relative;
-    }
-    .timeline-item::before{
-      content:"";
-      position:absolute;
-      left:-8px;
-      top:4px;
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 12px rgba(0,180,255,0.9);
-    }
-    .timeline-title{
-      font-size:13px;
-      font-weight:600;
-    }
-    .timeline-meta{
-      font-size:11px;
-      color:var(--muted);
+    .nav-title-main {
+      font-weight: 600;
+      font-size: 0.98rem;
     }
 
-    .list{
-      margin-top:8px;
-      font-size:13px;
-      color:var(--muted);
-      list-style:disc;
-      padding-left:20px;
+    .nav-title-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
-    /* CONTACT CARD */
-    .contact-line{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:7px;
-    }
-    .contact-line i{
-      width:18px;
-      text-align:center;
-    }
-    .contact-actions{
-      margin-top:10px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.88rem;
     }
 
-    footer{
-      margin-top:18px;
-      font-size:11px;
-      color:var(--muted);
-      text-align:center;
+    .nav-link {
+      position: relative;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 500;
+      padding-bottom: 0.15rem;
     }
-  </style>
-</head>
-<body>
-  <div class="shell">
-    <!-- NAV -->
-    <header class="nav">
-      <div class="nav-left">
-        <div class="logo" aria-hidden="true">
-          <span>K</span>
-        </div>
-        <div class="nav-name">
-          <h1>Karan Jeevan</h1>
-          <small>Embedded Systems & Robotics • ECE, Bengaluru</small>
-        </div>
-      </div>
 
-      <div class="nav-right">
-        <div class="pill">
-          <i class="fa-solid fa-microchip"></i>&nbsp; Final-year ECE
-        </div>
-        <a href="#contact" class="btn btn-primary">
-          <i class="fa-solid fa-paper-plane"></i> Hire me for internship
-        </a>
-      </div>
-    </header>
-
-    <!-- MAIN GRID -->
-    <main class="grid">
-      <!-- LEFT SIDE -->
-      <section>
-        <!-- HERO / ABOUT -->
-        <article class="card">
-          <h2>About</h2>
-          <div class="hero-title">
-            Building real-world hardware with <span style="color:var(--accent);">embedded intelligence.</span>
-          </div>
-          <p class="hero-highlight">
-            I’m a final-year <strong>Electronics & Communication Engineering</strong> student specializing in
-            <strong>Embedded Systems, IoT, Robotics, and sensor-based automation</strong>.
-            I enjoy converting ideas into working prototypes using microcontrollers, communication modules,
-            and circuit design.
-          </p>
-
-          <div class="chips">
-            <div class="chip"><i class="fa-solid fa-microchip"></i> Embedded Systems</div>
-            <div class="chip"><i class="fa-solid fa-robot"></i> Robotics</div>
-            <div class="chip"><i class="fa-solid fa-tower-broadcast"></i> IoT / Wireless</div>
-            <div class="chip"><i class="fa-solid fa-code"></i> C, Embedded C, Python</div>
-          </div>
-        </article>
-
-        <!-- PROJECTS -->
-        <article class="card" style="margin-top:14px;">
-          <h2>Highlighted projects</h2>
-
-          <div class="project">
-            <div class="project-title">
-              <i class="fa-solid fa-user-ninja"></i>
-              Camouflage Technique Based Multifunctional Army Robot
-              <span>Defense</span>
-            </div>
-            <p>
-              Designed a multifunctional defense robot for remote surveillance with
-              <strong>adaptive camouflage</strong>, obstacle detection and wireless control.
-              Implemented autonomous navigation features using Arduino and embedded C.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Arduino</span>
-              <span class="tag">Embedded C</span>
-              <span class="tag">Ultrasonic sensors</span>
-              <span class="tag">RF modules</span>
-              <span class="tag">Motor drivers</span>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-title">
-              <i class="fa-solid fa-seedling"></i>
-              IoT-Based Smart Plant Watering System
-              <span>IoT</span>
-            </div>
-            <p>
-              Built an automatic irrigation system that intelligently waters plants based on real-time
-              soil moisture and climate data. Enabled cloud monitoring and remote control over Wi-Fi.
-            </p>
-            <div class="project-tags">
-              <span class="tag">ESP8266</span>
-              <span class="tag">DHT &amp; moisture sensors</span>
-              <span class="tag">IoT dashboard</span>
-              <span class="tag">Automation</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- EDUCATION & ACHIEVEMENTS -->
-        <article class="card" style="margin-top:14px;">
-          <h2>Education & Achievements</h2>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-title">
-                B.E. in Electronics and Communication Engineering
-              </div>
-              <div class="timeline-meta">
-                Dr. Shivkumar Institute of Technology Engineering, Bengaluru — Expected 2026
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-title">
-                Pre-University College (PUC) — 65%
-              </div>
-              <div class="timeline-meta">
-                Sankalp College, Karnataka (2020–2022)
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-title">
-                SSLC — 67.04%
-              </div>
-              <div class="timeline-meta">
-                Sai Vidya Mandir High School, Karnataka (2020)
-              </div>
-            </div>
-          </div>
-
-          <ul class="list">
-            <li>IEEE certificate of participation for presenting the camouflage army robot project.</li>
-            <li>Presented project at <strong>IEEE Technical Symposium 2024</strong>.</li>
-            <li>Certificate of Merit in <strong>Electronics Circuit Design Contest (2023)</strong>.</li>
-            <li>Participated in <strong>IoT Innovation Workshop</strong>, DSSIT (2023).</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- RIGHT SIDE -->
-      <aside>
-        <!-- SKILLS -->
-        <section class="card">
-          <h2>Technical Skills</h2>
-
-          <div class="skills-grid">
-            <div class="skills-col">
-              <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Platforms</h3>
-              <div class="tag-row">
-                <span class="tag">Proteus</span>
-                <span class="tag">Multisim</span>
-                <span class="tag">MATLAB</span>
-                <span class="tag">Arduino IDE</span>
-                <span class="tag">ESP32 / ESP8266</span>
-                <span class="tag">Basic PCB design</span>
-                <span class="tag">Git</span>
-              </div>
-            </div>
-
-            <div class="skills-col">
-              <h3><i class="fa-solid fa-code"></i> Programming</h3>
-              <div class="tag-row">
-                <span class="tag">C</span>
-                <span class="tag">Embedded C</span>
-                <span class="tag">Python</span>
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-              </div>
-
-              <h3 style="margin-top:10px;"><i class="fa-solid fa-bolt"></i> Core Areas</h3>
-              <div class="tag-row">
-                <span class="tag">Embedded Systems</span>
-                <span class="tag">IoT</span>
-                <span class="tag">Sensors &amp; Actuators</span>
-                <span class="tag">Digital &amp; Analog Electronics</span>
-                <span class="tag">Communication Systems</span>
-                <span class="tag">Circuit Simulation</span>
-                <span class="tag">Basic VLSI Design</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- STRENGTHS -->
-        <section class="card" style="margin-top:14px;">
-          <h2>Profile snapshot</h2>
-          <ul class="list" style="margin-top:4px;">
-            <li>Interested in Embedded Systems, IoT, Robotics, VLSI & Signal Processing.</li>
-            <li>Strong in problem-solving, teamwork and adaptability.</li>
-            <li>Comfortable taking a project from idea → circuit → code → prototype.</li>
-          </ul>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="card" style="margin-top:14px;">
-          <h2>Contact</h2>
-          <div class="contact-line">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Bengaluru, Karnataka</span>
-          </div>
-          <div class="contact-line">
-            <i class="fa-solid fa-phone"></i>
-            <span>+91 79750 1262</span>
-          </div>
-          <div class="contact-line">
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:karankamla29697@gmail.com">karankamla29697@gmail.com</a>
-          </div>
-          <div class="contact-line">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/karan-jeevan-165525386" target="_blank">
-              linkedin.com/in/karan-jeevan-165525386
-            </a>
-          </div>
-
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:karankamla29697@gmail.com">
-              <i class="fa-solid fa-envelope-open-text"></i> Email Karan
-            </a>
-            <button class="btn" type="button" onclick="copyLink()">
-              <i class="fa-solid fa-link"></i> Copy portfolio link
-            </button>
-          </div>
-          <p style="font-size:11px;color:var(--muted);margin-top:8px;">
-            Add this page link to your Instagram / LinkedIn bio so recruiters can quickly view your work.
-          </p>
-        </section>
-      </aside>
-    </main>
-
-    <footer>
-      © <span id="year"></span> Karan Jeevan — Designed in a dark theme for embedded & robotics roles.
-    </footer>
-  </div>
-
-  <script>
-    // dynamic year + copy link helper
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function copyLink() {
-      const url = window.location.href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          alert("Portfolio link copied! Paste it into your bio.");
-        }, function () {
-          prompt("Copy this link:", url);
-        });
-      } else {
-        prompt("Copy this link:", url);
-      }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      bottom: -0.18rem;
+      height: 2px;
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition);
+      background: linear-gradient(to right, #a855f7, #22d3ee);
     }
-  </script>
-</body>
-</html>
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-link.active {
+      color: #e5e7eb;
+    }
+
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(to right, #4f46e5, #ec4899);
+      border: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75);
+      transition: transform var(--transition), box-shadow var(--transition),
+        opacity var(--transition);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.25rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(74, 222, 128, 0.7);
+      font-size: 0.76rem;
+      color: #bbf7d0;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-kicker span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.35);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #a855f7, #22d3ee);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.96rem;
+      color: var(--muted);
+      max-width: 33rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.3rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-pill {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform var(--transition), box-shadow var(--transition),
+        background var(--transition), color var(--transition), opacity var(--transition),
+        border-color var(--transition);
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 10% 0, #22d3ee, #4f46e5 45%, #ec4899);
+      color: #f9fafb;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.97;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(243, 244, 246, 0.9);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .hero-meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-meta-value {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 1.6rem 1.4rem;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -35%;
+      background:
+        radial-gradient(circle at 0 0, rgba(236, 72, 153, 0.22), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(45, 212, 191, 0.16), transparent 55%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 1.1rem;
+      z-index: 1;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.9rem;
+    }
+
+    .profile {
+      display: flex;
+      gap: 0.85rem;
+    }
+
+    .profile-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 10% 0, #22d3ee, #6366f1 40%, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #f9fafb;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .profile-meta-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .profile-meta-role {
+      font-size: 0.8rem;
+      color: #d1d5f0;
+    }
+
+    .profile-meta-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .availability-chip {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(74, 222, 128, 0.7);
+      color: #bbf7d0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      align-self: flex-start;
+    }
+
+    .availability-chip span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.78rem;
+    }
+
+    .info-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.7rem 0.75rem;
+    }
+
+    .info-card-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .info-card-main {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-card-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .stack-pill {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.7rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card-socials {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .social-chip {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.95);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background var(--transition), border-color var(--transition),
+        transform var(--transition), color var(--transition);
+    }
+
+    .social-chip i {
+      font-size: 0.85rem;
+    }
+
+    .social-chip:hover {
+      border-color: rgba(248, 250, 252, 0.98);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+      color: #f9fafb;
+    }
+
+    .hero-card-tagline {
+      text-align: right;
+      font-size: 0.75rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.36rem;
+      font-weight: 600;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.9fr) minmax(0, 2.2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-text p + p {
+      margin-top: 0.65rem;
+    }
+
+    .about-highlight {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .stat-card {
+      padding: 0.9rem;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-extra {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    /* Skills */
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.92);
+      font-size: 0.8rem;
+    }
+
+    .skill-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-level {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-bar-outer {
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      overflow: hidden;
+      margin-top: 0.1rem;
+    }
+
+    .skill-bar-inner {
+      height: 5px;
+      border-radius: inherit;
+      background: linear-gradient(to right, #22d3ee, #6366f1, #ec4899);
+      width: 0;
+      transition: width 700ms ease-out;
+    }
+
+    /* Projects */
+    .projects-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 0.9rem;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, #111827, #020617 70%);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(244, 244, 245, 0.9);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.9);
+    }
+
+    .project-tag-pill {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-bottom: 0.4rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .project-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .project-tech span {
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.7rem;
+    }
+
+    .project-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-filter button {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--muted);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition),
+        border-color var(--transition), transform var(--transition);
+    }
+
+    .project-filter button.active {
+      background: linear-gradient(to right, #4f46e5, #ec4899);
+      border-color: transparent;
+      color: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    .projects-side-card {
+      padding: 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.82rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.2rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22d3ee;
+    }
+
+    .timeline-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .timeline-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    /* Experience */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2.8fr);
+      gap: 2rem;
+    }
+
+    .experience-card {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .experience-role {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .experience-meta {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .experience-points {
+      padding-left: 1rem;
+    }
+
+    .experience-points li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 2.6fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-row i {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 1);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.75rem;
+    }
+
+    .contact-form {
+      padding: 1.1rem 1.2rem;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .form-row {
+      margin-bottom: 0.85rem;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      margin-bottom: 0.18rem;
+      display: block;
+      color: #e5e7eb;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
